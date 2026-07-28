@@ -551,7 +551,7 @@
       inferCtx.drawImage(video, 0, 0, iw, ih);
 
       // ambang skor 0.05 & max 160 kotak -> sangat sensitif, tapi makin rawan salah label & makin berat (bisa bikin patah-patah lagi)
-      const preds = await model.detect(inferCanvas, 160, 0.05);
+      const preds = await model.detect(inferCanvas, 30, 0.09);
       // skala balik ke ukuran video asli
       lastPreds = preds.map(p=>({
         class:p.class, score:p.score,
